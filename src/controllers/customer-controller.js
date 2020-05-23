@@ -36,6 +36,8 @@ exports.post = async(req, res, next) => {
 }
 
 exports.authenticate = async(req, res, next) => {
+	const endpont = req.route.path;
+	console.log(endpont.slice(1))
 	try {
 		const customer = await repository.authenticate({
 			email: req.body.email,
